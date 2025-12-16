@@ -91,7 +91,9 @@ const SubmitButton = ({ isLoading }: { isLoading: boolean }) => {
   return (
     <Button
       size="lg"
-      className={"w-full py-5 h-auto group overflow-hidden relative gap-0"}
+      className={
+        "w-full py-5 h-auto group overflow-hidden relative gap-0 active:scale-95 transition-all duration-300 ease-out active:translate-y-0.5"
+      }
       disabled={isLoading}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
