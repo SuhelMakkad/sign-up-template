@@ -1,8 +1,9 @@
 "use client"
 
-import { CheckIcon, SparklesIcon } from "lucide-react"
+import { CheckIcon } from "lucide-react"
 import { motion } from "motion/react"
 
+import { useTimer } from "@/hooks/use-timer"
 import { useEmail } from "@/store/email-store"
 
 export const SuccessState = ({ className }: { className?: string }) => {
@@ -58,17 +59,32 @@ export const SuccessState = ({ className }: { className?: string }) => {
           <span className="font-semibold text-primary text-lg">{email}</span>
         </motion.div>
 
-        {/* Additional Info */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5, duration: 0.5 }}
-          className="text-sm text-muted-foreground max-w-[280px]"
-        >
-          Check your inbox for the invite link. Can&apos;t find it? Check your
-          spam folder.
-        </motion.p>
+        <Redirecting />
       </div>
+    </motion.div>
+  )
+}
+
+const Redirecting = () => {
+  const { seconds } = useTimer({
+    initialSeconds: 5,
+    autoStart: true,
+    countDown: true,
+    onComplete: () => {
+      window.location.href = "https://tradefox.live/"
+    },
+  })
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+    >
+      <p className="text-secondary-foreground/80 text-xs font-medium max-w-xs mx-auto">
+        You will be redirected to the home page in <br />
+        {seconds} seconds
+      </p>
     </motion.div>
   )
 }
