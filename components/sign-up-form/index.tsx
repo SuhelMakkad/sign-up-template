@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "motion/react"
 
 import { validateEmail } from "@/lib/form"
 import { cn } from "@/lib/utils"
+import { emailStore } from "@/store/email-store"
 
 import { Button } from "../button"
 import { Input } from "../input"
@@ -28,6 +29,10 @@ export const SignUpForm = ({ className }: { className?: string }) => {
       setErrors({ email: "Please enter a valid email address" })
       return
     }
+
+    emailStore.setState({
+      email,
+    })
   }
 
   return (

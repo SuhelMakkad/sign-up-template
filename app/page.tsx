@@ -13,8 +13,8 @@ import { testimonials } from "@/data/testimonials"
 export default function Home() {
   return (
     <main className="h-dvh grid grid-cols-9">
-      <section className="col-span-5 isolate size-full gap-8 lg:flex hidden gradient-background bg-(--gradient-background-to) pt-10 pb-10 justify-between flex-col">
-        <section className="grid grid-cols-2 items-center gap-9.5 ps-10">
+      <section className="col-span-5 isolate size-full lg:flex hidden gradient-background bg-(--gradient-background-to) pt-10 pb-10 flex-col">
+        <section className="grid grid-cols-2 items-center gap-9.5 ps-10 mb-16">
           <TextSection
             Icon={BellIcon}
             className="max-w-80.5"
@@ -42,7 +42,7 @@ export default function Home() {
           />
         </section>
 
-        <section className="flex flex-col relative hide-on-small-height">
+        <section className="flex flex-col relative hide-on-small-height mt-auto">
           <h3 className="text-[#F2F2F2] font-medium text-[31px] text-end px-10">
             Testimonials
             <hr className="border-secondary/50 mb-15 mt-5" />
@@ -50,7 +50,7 @@ export default function Home() {
           <Testimonials testimonials={testimonials} />
         </section>
 
-        <LogoIcon className="size-15 text-white absolute bottom-8 left-10 -z-10 hide-on-small-height" />
+        <LogoIcon className="size-15 text-white absolute bottom-8 left-10 -z-10" />
       </section>
 
       <section className="lg:col-span-4 col-span-full m-auto flex flex-col gap-6">

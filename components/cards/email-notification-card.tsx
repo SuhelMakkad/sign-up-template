@@ -1,8 +1,14 @@
+"use client"
+
+import { useEmailStore } from "@/store/email-store"
+
 import { BellIcon } from "../icons/bell"
 import { Input } from "../input"
 import { BaseCard } from "./base-card"
 
 export const EmailNotificationCard = () => {
+  const email = useEmailStore()
+
   return (
     <BaseCard
       Icon={BellIcon}
@@ -15,7 +21,7 @@ export const EmailNotificationCard = () => {
           </p>
           <Input
             readOnly
-            value="test@test.com"
+            value={email || "hello@gmail.com"}
             className="text-[9.1px]! h-8.75 rounded-[5.6px] bg-background"
           />
         </div>
