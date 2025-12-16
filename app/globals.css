@@ -99,3 +99,9 @@
     var(--gradient-background-to) 90%
   );
 }
+
+@utility text-stroke {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  color: white;
+}
