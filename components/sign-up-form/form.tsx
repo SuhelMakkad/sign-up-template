@@ -33,7 +33,6 @@ export const SignUpForm = ({ className }: { className?: string }) => {
 
     setIsLoading(true)
     setTimeout(() => {
-      setIsLoading(false)
       emailStore.setState({
         email: email.toLowerCase(),
         submitted: true,

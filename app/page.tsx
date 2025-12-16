@@ -6,6 +6,7 @@ import { Testimonials } from "@/components/cards/testimonial"
 import { BellIcon } from "@/components/icons/bell"
 import { EyeIcon } from "@/components/icons/eye"
 import { LogoIcon } from "@/components/icons/logo"
+import { MobileTestimonial } from "@/components/mobile-testimonial"
 import { SignUpSection } from "@/components/sign-up-form"
 import { TextSection } from "@/components/text-section"
 import { testimonials } from "@/data/testimonials"
@@ -13,6 +14,7 @@ import { testimonials } from "@/data/testimonials"
 export default function Home() {
   return (
     <main className="h-dvh grid grid-cols-9">
+      {/* Desktop: Rich content panel */}
       <section className="col-span-5 isolate size-full lg:flex hidden gradient-background bg-(--gradient-background-to) pt-10 pb-10 flex-col">
         <section className="grid grid-cols-2 items-center gap-9.5 ps-10 mb-16">
           <TextSection
@@ -53,9 +55,31 @@ export default function Home() {
         <LogoIcon className="size-15 text-white absolute bottom-8 left-10 -z-10" />
       </section>
 
-      <section className="lg:col-span-4 col-span-full m-auto flex flex-col gap-6">
+      {/* Mobile & Desktop: Form section */}
+      <section className="lg:col-span-4 col-span-full m-auto flex flex-col gap-6 px-6 py-8 lg:px-0 lg:py-0 relative">
+        {/* Mobile: Logo at top */}
+        <div className="lg:hidden flex justify-center mb-2">
+          <LogoIcon className="size-10 text-primary" />
+        </div>
+
+        {/* Mobile: Value prop headline */}
+        <p className="lg:hidden text-center text-muted-foreground/70 text-sm font-medium max-w-72 mx-auto -mt-2 mb-2">
+          Track whale movements and get notified about market-moving activities
+        </p>
+
         <SignUpSection className="max-w-81.5 mx-auto text-center lg:text-start" />
+
+        {/* Mobile: Testimonial rotator */}
+        <div className="lg:hidden mt-4">
+          <MobileTestimonial
+            testimonials={testimonials}
+            className="max-w-80 mx-auto"
+          />
+        </div>
       </section>
+
+      {/* Mobile: Subtle gradient accent */}
+      <div className="lg:hidden fixed inset-0 -z-10 mobile-gradient-accent pointer-events-none" />
     </main>
   )
 }

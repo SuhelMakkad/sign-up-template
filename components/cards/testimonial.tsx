@@ -1,22 +1,12 @@
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/carousel"
+import { Carousel, CarouselContent, CarouselItem } from "@/components/carousel"
 
-type TestimonialCardProps = {
+export type Testimonial = {
   name: string
   title: string
   description: string
 }
 
-const TestimonialCard = ({
-  name,
-  title,
-  description,
-}: TestimonialCardProps) => {
+const TestimonialCard = ({ name, title, description }: Testimonial) => {
   return (
     <article
       className="flex flex-col gap-5 bg-card p-5 rounded-[12px] shrink-0"
@@ -41,7 +31,7 @@ const TestimonialCard = ({
 }
 
 type TestimonialsProps = {
-  testimonials: TestimonialCardProps[]
+  testimonials: Testimonial[]
 }
 
 export const Testimonials = ({ testimonials }: TestimonialsProps) => {

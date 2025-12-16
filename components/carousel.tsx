@@ -28,11 +28,12 @@ type CarouselContextProps = {
   scrollNext: () => void
   canScrollPrev: boolean
   canScrollNext: boolean
+  currentIndex: number
 } & CarouselProps
 
 const CarouselContext = React.createContext<CarouselContextProps | null>(null)
 
-function useCarousel() {
+export function useCarousel() {
   const context = React.useContext(CarouselContext)
 
   if (!context) {
@@ -60,11 +61,13 @@ function Carousel({
   )
   const [canScrollPrev, setCanScrollPrev] = React.useState(false)
   const [canScrollNext, setCanScrollNext] = React.useState(false)
+  const [currentIndex, setCurrentIndex] = React.useState(0)
 
   const onSelect = React.useCallback((api: CarouselApi) => {
     if (!api) return
     setCanScrollPrev(api.canScrollPrev())
     setCanScrollNext(api.canScrollNext())
+    setCurrentIndex(api.selectedScrollSnap())
   }, [])
 
   const scrollPrev = React.useCallback(() => {
@@ -116,6 +119,7 @@ function Carousel({
         scrollNext,
         canScrollPrev,
         canScrollNext,
+        currentIndex,
       }}
     >
       <div
