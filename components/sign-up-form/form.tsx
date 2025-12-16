@@ -78,7 +78,7 @@ export const SignUpForm = ({ className }: { className?: string }) => {
 
       <SubmitButton isLoading={isLoading} />
 
-      <p className="text-base font-semibold text-center whitespace-nowrap py-4.5 text-secondary-foreground">
+      <p className="text-sm md:text-base font-semibold text-center lg:whitespace-nowrap py-4.5 text-secondary-foreground">
         You&apos;ll receive an email with an invite link to join.
       </p>
     </form>
