@@ -1,10 +1,18 @@
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/carousel"
+
 type TestimonialCardProps = {
   name: string
   title: string
   description: string
 }
 
-export const TestimonialCard = ({
+const TestimonialCard = ({
   name,
   title,
   description,
@@ -24,10 +32,35 @@ export const TestimonialCard = ({
       </header>
 
       <p className="text-[#1D2129] text-base font-medium">
-        {`“`}
+        {`"`}
         {description}
-        {`”`}
+        {`"`}
       </p>
     </article>
+  )
+}
+
+type TestimonialsProps = {
+  testimonials: TestimonialCardProps[]
+}
+
+export const Testimonials = ({ testimonials }: TestimonialsProps) => {
+  return (
+    <Carousel
+      className="w-full"
+      opts={{
+        dragFree: true,
+      }}
+    >
+      <CarouselContent className="cursor-grab active:cursor-grabbing">
+        <CarouselItem className="basis-auto w-1/3" />
+        {testimonials.map((testimonial, index) => (
+          <CarouselItem key={index} className="basis-auto select-none">
+            <TestimonialCard {...testimonial} />
+          </CarouselItem>
+        ))}
+        <CarouselItem className="basis-auto w-40" />
+      </CarouselContent>
+    </Carousel>
   )
 }

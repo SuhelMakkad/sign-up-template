@@ -14,7 +14,7 @@ export const BellIcon = ({
       <path
         d="M21 9.33301C21 7.47649 20.2625 5.69601 18.9497 4.38326C17.637 3.07051 15.8565 2.33301 14 2.33301C12.1435 2.33301 10.363 3.07051 9.05025 4.38326C7.7375 5.69601 7 7.47649 7 9.33301C7 17.4997 3.5 19.833 3.5 19.833H24.5C24.5 19.833 21 17.4997 21 9.33301Z"
         fill={bellFill ?? "#165DFF"}
-        fill-opacity="0.1"
+        fillOpacity="0.1"
         stroke="currentColor"
         strokeWidth="1.4"
         strokeLinecap="round"

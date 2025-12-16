@@ -16,7 +16,7 @@ export const TextSection = ({
   className,
 }: TextSectionProps) => {
   return (
-    <section dir={dir} className={cn("flex flex-col gap-4 py-4", className)}>
+    <section dir={dir} className={cn("flex flex-col gap-4 me-auto", className)}>
       <Icon className="size-8 text-white" />
       <h2 className="text-[#F2F2F2] font-medium text-[31px]">{title}</h2>
       <p className="text-[#F2F2F2] text-base font-medium">{description}</p>
