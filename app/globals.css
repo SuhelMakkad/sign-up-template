@@ -107,3 +107,9 @@
   -webkit-text-stroke-color: black;
   color: white;
 }
+
+@utility hide-on-small-height {
+  @media (max-height: 960px) {
+    @apply hidden;
+  }
+}

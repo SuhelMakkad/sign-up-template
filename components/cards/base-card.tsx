@@ -9,9 +9,9 @@ export type BaseCardProps = {
 
 export const BaseCard = ({ Icon, header, body, className }: BaseCardProps) => {
   return (
-    <label
+    <div
       className={cn(
-        "p-3.5 rounded-[8.4px] bg-card flex flex-col gap-3.5 w-47.5 select-none cursor-pointer relative shrink-0",
+        "p-3.5 rounded-[8.4px] bg-card flex flex-col gap-3.5 w-47.5 select-none relative shrink-0 h-full",
         className
       )}
     >
@@ -20,6 +20,6 @@ export const BaseCard = ({ Icon, header, body, className }: BaseCardProps) => {
         {header}
       </div>
       {body}
-    </label>
+    </div>
   )
 }

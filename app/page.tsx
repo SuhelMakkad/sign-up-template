@@ -13,8 +13,8 @@ import { testimonials } from "@/data/testimonials"
 export default function Home() {
   return (
     <main className="h-dvh grid grid-cols-9">
-      <section className="col-span-5 size-full gap-8 lg:flex hidden gradient-background bg-(--gradient-background-to) pt-20 pb-10 justify-between flex-col">
-        <section className="grid grid-cols-2 gap-9.5 ps-10">
+      <section className="col-span-5 isolate size-full gap-8 lg:flex hidden gradient-background bg-(--gradient-background-to) pt-10 pb-10 justify-between flex-col">
+        <section className="grid grid-cols-2 items-center gap-9.5 ps-10">
           <TextSection
             Icon={BellIcon}
             className="max-w-80.5"
@@ -30,7 +30,7 @@ export default function Home() {
             alt="Preview"
             width={previewImage.width}
             height={previewImage.height}
-            className="w-auto h-70 object-cover"
+            className="h-auto w-83.75 object-cover"
           />
 
           <TextSection
@@ -42,14 +42,15 @@ export default function Home() {
           />
         </section>
 
-        <section className="flex flex-col relative">
+        <section className="flex flex-col relative hide-on-small-height">
           <h3 className="text-[#F2F2F2] font-medium text-[31px] text-end px-10">
             Testimonials
             <hr className="border-secondary/50 mb-15 mt-5" />
           </h3>
-          <LogoIcon className="size-15 text-white absolute bottom-0 left-10" />
           <Testimonials testimonials={testimonials} />
         </section>
+
+        <LogoIcon className="size-15 text-white absolute bottom-8 left-10 -z-10 hide-on-small-height" />
       </section>
 
       <section className="lg:col-span-4 col-span-full m-auto flex flex-col gap-6">

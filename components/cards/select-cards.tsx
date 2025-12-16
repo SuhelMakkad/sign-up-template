@@ -17,7 +17,7 @@ export const WalletMoveCard = () => {
   return (
     <BaseCard
       Icon={BarsIcon}
-      header={<Checkbox defaultChecked />}
+      header={<Checkbox checked />}
       body={
         <div className="flex flex-col gap-3.75 mt-auto">
           <p className="text-[11.2px] font-medium w-37 text-secondary-foreground">
@@ -34,7 +34,7 @@ export const WalletDormantCard = () => {
   return (
     <BaseCard
       Icon={ClockIcon}
-      header={<Checkbox defaultChecked />}
+      header={<Checkbox checked />}
       body={
         <div className="flex flex-col gap-3.75 mt-auto">
           <p className="text-[11.2px] font-medium w-28.5 text-secondary-foreground">
