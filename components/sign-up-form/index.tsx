@@ -44,7 +44,7 @@ export const SignUpForm = ({ className }: { className?: string }) => {
           name="email"
           aria-invalid={errors.email ? "true" : "false"}
           aria-describedby={errors.email ? "email-error" : undefined}
-          className="h-auto px-6 py-5 text-base font-medium placeholder:text-placeholder"
+          className="h-auto px-6 py-5 rounded-[8px] text-base font-medium placeholder:text-placeholder"
           placeholder="Your email address"
         />
         <AnimatePresence>
