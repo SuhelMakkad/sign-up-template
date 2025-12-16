@@ -6,7 +6,7 @@ import { Testimonials } from "@/components/cards/testimonial"
 import { BellIcon } from "@/components/icons/bell"
 import { EyeIcon } from "@/components/icons/eye"
 import { LogoIcon } from "@/components/icons/logo"
-import { SignUpForm } from "@/components/sign-up-form"
+import { SignUpSection } from "@/components/sign-up-form"
 import { TextSection } from "@/components/text-section"
 import { testimonials } from "@/data/testimonials"
 
@@ -54,11 +54,7 @@ export default function Home() {
       </section>
 
       <section className="lg:col-span-4 col-span-full m-auto flex flex-col gap-6">
-        <SignUpForm className="max-w-81.5 mx-auto text-center lg:text-start" />
-
-        <p className="text-base font-semibold text-center whitespace-nowrap py-4.5 text-secondary-foreground">
-          You&apos;ll receive an email with an invite link to join.
-        </p>
+        <SignUpSection className="max-w-81.5 mx-auto text-center lg:text-start" />
       </section>
     </main>
   )

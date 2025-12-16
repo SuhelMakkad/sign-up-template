@@ -1,13 +1,13 @@
 "use client"
 
-import { useEmailStore } from "@/store/email-store"
+import { useEmail } from "@/store/email-store"
 
 import { BellIcon } from "../icons/bell"
 import { Input } from "../input"
 import { BaseCard } from "./base-card"
 
 export const EmailNotificationCard = () => {
-  const email = useEmailStore()
+  const email = useEmail()
 
   return (
     <BaseCard

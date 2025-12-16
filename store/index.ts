@@ -114,9 +114,12 @@ export const useSyncStore = <T extends Record<string, unknown>>(
   return useSyncExternalStore(subscribe, getSnapshot, getSnapshot)
 }
 
-export const useStoreValue = <T extends Record<string, unknown>>(
+export const useStoreValue = <
+  T extends Record<string, unknown>,
+  TKey extends keyof T,
+>(
   store: ProxyStore<T>,
-  key: keyof T
+  key: TKey
 ) => {
   const [value, setValue] = useState(store.getState()[key])
 
